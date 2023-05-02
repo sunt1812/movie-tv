@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+label {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.235;
+  font-size: 1rem;
+}
+p {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
+}
+
+button {
+  line-height: initial !important;
+}
+.btn-hover:hover {
+  background-color: #ff00000a !important;
+}
+/*========== start loading ========= */
+.pure-material-progress-linear {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  height: 0.25em;
+  color: #ff0000;
+  background-color: #b20000;
+  font-size: 16px;
+}
+
+.pure-material-progress-linear::-webkit-progress-bar {
+  background-color: transparent;
+}
+
+/* Determinate */
+.pure-material-progress-linear::-webkit-progress-value {
+  background-color: currentColor;
+  transition: all 0.2s;
+}
+
+.pure-material-progress-linear::-moz-progress-bar {
+  background-color: currentColor;
+  transition: all 0.2s;
+}
+
+.pure-material-progress-linear::-ms-fill {
+  border: none;
+  background-color: currentColor;
+  transition: all 0.2s;
+}
+
+/* Indeterminate */
+.pure-material-progress-linear:indeterminate {
+  background-size: 200% 100%;
+  background-image: linear-gradient(
+    to right,
+    transparent 50%,
+    currentColor 50%,
+    currentColor 60%,
+    transparent 60%,
+    transparent 71.5%,
+    currentColor 71.5%,
+    currentColor 84%,
+    transparent 84%
+  );
+  animation: pure-material-progress-linear 2s infinite linear;
+}
+
+.pure-material-progress-linear:indeterminate::-moz-progress-bar {
+  background-color: transparent;
+}
+
+.pure-material-progress-linear:indeterminate::-ms-fill {
+  animation-name: none;
+}
+
+@keyframes pure-material-progress-linear {
+  0% {
+    background-size: 200% 100%;
+    background-position: left -31.25% top 0%;
+  }
+  50% {
+    background-size: 800% 100%;
+    background-position: left -49% top 0%;
+  }
+  100% {
+    background-size: 400% 100%;
+    background-position: left -102% top 0%;
+  }
+}
+/*========== end loading ========= */
+@layer base {
+  body {
+    @apply text-base bg-black-900 dark:bg-gray text-white dark:text-black leading-6;
+  }
+}
+@layer components {
+  .btn-primary {
+    @apply text-sm font-bold text-white  uppercase py-[9.5px] px-3 transition duration-300 rounded;
+  }
+  .overflow-body {
+    @apply overflow-hidden mr-4;
+  }
+  .style-input {
+    @apply w-full p-4 bg-transparent outline-none border-gray-300 dark:border-black-200 border  dark:border-2  hover:border hover:border-white   focus:border-fern focus-within:border-fern dark:focus:border-black-200 dark:focus-within:border-white rounded-sm;
+  }
+  .ok {
+    @apply border-primary dark:border-primary border dark:border-2  hover:border hover:border-primary  focus:border-primary focus-within:border-fern dark:focus:border-fern;
+  }
+  /* auto swiper response */
+  .auto-swiper .swiper-slide {
+    @apply w-1/2 sm:w-[35%] md:w-1/4 lg:w-[20.5%];
+  }
+  /* swiper wrapper */
+  .style-swiper.swiper {
+    @apply pb-12 px-4 md:px-16;
+  }
+  /*  */
+  .style-swiper .swiper-slide {
+    @apply mr-1 md:mr-[10px];
+  }
+  /* swipe navigation */
+  .style-swiper .swiper-button-next,
+  .style-swiper .swiper-button-prev {
+    @apply text-white dark:text-black;
+  }
+  .style-swiper .swiper-button-next::after,
+  .style-swiper .swiper-button-prev::after {
+    @apply text-base md:text-[2rem];
+  }
+  /* swiper pagination */
+  .style-swiper .swiper-pagination-bullet {
+    @apply bg-white dark:bg-black;
+  }
+  .show-menu {
+    display: block !important;
+  }
+}
+.text-line-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.text-line {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.text-line-5 {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.text-line-10 {
+  display: -webkit-box;
+  -webkit-line-clamp: 10;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.svg-pi-wrapper {
+  position: relative;
+}
+
+.svg-pi {
+  transform: rotate(-90deg); /* Fix the orientation */
+}
+/* loading button */
+.loader {
+  border: 3px solid #f3f3f3; /* Light grey */
+  border-top: 3px solid #8b9296; /* Blue */
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  animation: spin 2s linear infinite;
+  text-align: center;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* loading button */
+/* toast css zidex */
+.Toastify__toast--error::before {
+  z-index: 1000000;
+}
