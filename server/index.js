@@ -27,6 +27,5 @@ mongoose
     });
   })
   .catch((err) => {
-    console.log(err, 'dgg');
     process.exit(1);
   });
