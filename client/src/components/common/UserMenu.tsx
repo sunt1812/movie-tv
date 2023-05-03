@@ -13,7 +13,7 @@ const UserMenu = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    isInside
+    !isInside
       ? document.body.classList.add('overflow-body')
       : document.body.classList.remove('overflow-body');
   }, [isInside]);

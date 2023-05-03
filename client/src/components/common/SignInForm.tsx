@@ -44,7 +44,7 @@ const SignInForm = ({ setOpenAuth }: IProps) => {
     },
   });
   return (
-    <div className="absolute w-full left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 p-8 max-w-[600px] z-[99993]">
+    <div className="absolute w-full left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 px-8 max-w-[600px] z-[99993]">
       <div className="p-8 bg-black dark:bg-white shadow-3xl relative z-[99999]">
         {/* logo */}
         <div className="flex items-center justify-center text-[1.7rem] text-white dark:text-black font-bold mb-8">
